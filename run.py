@@ -1,4 +1,6 @@
 import random
+import sys
+from termcolor import colored
 
 def print_menu():
     print("Welcome to Wordle")
@@ -11,4 +13,3 @@ def read_random_word():
 
 print_menu()
 word = read_random_word()
-print(word)
