@@ -7,7 +7,8 @@ def print_menu():
 def read_random_word():
     with open("words.txt") as f:
         words = f.read().splitlines()
-        return
+        return random.choice(words)
 
 print_menu()
-
+word = read_random_word()
+print(word)
