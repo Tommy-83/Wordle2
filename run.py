@@ -8,8 +8,8 @@ def read_random_word():
         return random.choice(word_array)
 
 def print_menu():
-    print("Let's play Wordle:")
-    print("Type a 5 letter word below and press Enter. You have 6 tries to guess the random word.\n")
+    print("Welcome to the word of the day game...wink,wink:")
+    print("Type a 5 letter word below and press Enter. Green letter indicates that letter is in correct position, yellow indicates that the letter is in the word but places somewhere else.\n")
 
 
 print_menu()
