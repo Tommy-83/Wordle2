@@ -4,7 +4,7 @@ from termcolor import colored, cprint
 
 def print_menu():
     print("Welcome to Wordle")
-    print("Type 5 letter word and hit enter")
+    print("Type 5 letter word and hit enter\n")
 
 def read_random_word():
     with open("words.txt") as f:
@@ -17,6 +17,9 @@ word = read_random_word()
 for attempt in range(1, 7):
     guess = input().lower()
 
+    sys.stdout.write('\x1b[1A')
+    sys.stdout.write('\x1b[1K')
+
     for i in range( min(len(guess), 5) ):
         if guess[i] == word[i]:
             print(colored(guess[i], 'green'), end="")
@@ -24,8 +27,10 @@ for attempt in range(1, 7):
             print(colored(guess[i], 'yellow'), end="")
         else:
             print(guess[i], end="")
+    print()
 
-        if guess == word:
-            print(colored(f"Congrats! YOu got the wordle in {i}", 'red'))
+    if guess == word:
+        print(colored(f"Congrats! YOu got the wordle in {attempt}", 'red'))
+        break
 
         
